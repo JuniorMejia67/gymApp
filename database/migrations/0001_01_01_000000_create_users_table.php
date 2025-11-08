@@ -18,6 +18,14 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+
+            $table->string('role')->default('usuario');
+
+            $table->string('phone', 20)->nullable();
+
+            $table->date('membership_start_date')->nullable()->comment('Fecha de ingreso/inicio de membresía');
+            $table->string('membership_type')->nullable()->comment('Tipo de membresía (e.g., Mensual, Trimestral)');
+
             $table->timestamps();
         });
 
