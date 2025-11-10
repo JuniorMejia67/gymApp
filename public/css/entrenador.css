@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia Sans Condensed', Arial, sans-serif;
+    background: #0E1B26;
+    color: #FFFFFF;
+}
+
+.caja1 {
+    background: #0B2A34;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2CC1AA;
+}
+
+.boton {
+    background: #2CC1AA;
+    border: none;
+    padding: 8px 14px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+.sidebar {
+    width: 240px;
+    background: #10212C;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-right: 2px solid #2CC1AA;
+}
+
+.btn-sidebar {
+    background: #182B37;
+    border: none;
+    padding: 12px;
+    color: #FFFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.contenido {
+    flex: 1;
+    padding: 25px;
+}
+
+.seccion {
+    background: #0E1B26;
+    padding: 18px;
+    border-radius: 6px;
+    border: 1px solid #2CC1AA;
+    margin-bottom: 20px;
+}
+
+/* FORMULARIO - campos y botones al costado */
+.formulario {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.campos {
+    flex: 1;
+}
+
+.botones-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs y textarea */
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #2CC1AA;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    background: #10212C;
+    color: #FFFFFF;
+    font-family: 'Sofia Sans Condensed', Arial, sans-serif;
+}
+
+textarea {
+    height: 80px;
+}
+
+.fila {
+    display: flex;
+    gap: 15px;
+}
+
+/* Botones */
+.btn-guardar {
+    background: #2CC1AA;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    width: 120px;
+    font-family: 'Sofia Sans Condensed', Arial, sans-serif;
+}
+
+.btn-limpiar {
+    background: transparent;
+    color: #C7FF00;
+    border: 1px solid #C7FF00;
+    padding: 10px 14px;
+    border-radius: 4px;
+    width: 120px;
+    font-family: 'Sofia Sans Condensed', Arial, sans-serif;
+}
+
+/* Listas de rutinas */
+.rutina {
+    background: #10212C;
+    border-radius: 6px;
+    padding: 12px;
+    border: 1px solid #2CC1AA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-family: 'Sofia Sans Condensed', Arial, sans-serif;
+}
+
+.btn-editar {
+    background: #2CC1AA;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Sofia Sans Condensed', Arial, sans-serif;
+}
+
+.btn-eliminar {
+    background: transparent;
+    border: 1px solid #C7FF00;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #C7FF00;
+    margin-left: 5px;
+    font-family: 'Sofia Sans Condensed', Arial, sans-serif;
+}
+

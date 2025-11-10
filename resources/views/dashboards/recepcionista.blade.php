@@ -25,6 +25,19 @@
             <a href="#" class="menu-item">Chequeo de Ingreso</a>
         </nav>
     </main>
+    <a href="{{ route('recepcionista.contactos') }}" 
+        style="
+            display:inline-block;
+            padding: 12px 20px;
+            background:#00796b;
+            color:white;
+            border-radius:8px;
+            text-decoration:none;
+            font-weight:600;
+            ">
+        Ver Contactos
+    </a>
+
 
 </body>
 </html>
