@@ -3,28 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Miembro - FitPro</title>
-    <link href="/css/app.css" rel="stylesheet">
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="{{ asset('css/usuario.css') }}">
 </head>
-<body class="dashboard-body">
+<body>
 
-    <header class="dashboard-header bg-purple-600">
-        <h1>Panel de Miembro</h1>
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-secondary">Cerrar Sesión</button>
-        </form>
-    </header>
+    <div class="container">
+        <h1>Bienvenido, {{ $user->name }}</h1>
 
-    <main class="dashboard-content">
-        <h2 class="text-3xl">Bienvenido(a), {{ Auth::user()->name }}</h2>
-        <p>Tu rol es: <span class="badge badge-member">{{ Auth::user()->role }}</span></p>
-        <p>Revisa tu plan de entrenamiento y el estado de tu membresía.</p>
-        <div class="user-info-box">
-            <p><strong>Tipo de Membresía:</strong> {{ Auth::user()->membership_type ?? 'No definido' }}</p>
-            <p><strong>Fecha de Ingreso:</strong> {{ Auth::user()->membership_start_date ?? 'No definido' }}</p>
+        <div class="info">
+            <label>Correo electrónico:</label>
+            <p>{{ $user->email }}</p>
+
+            <label>Teléfono:</label>
+            <p>{{ $user->phone ?? 'No registrado' }}</p>
+
+            <label>Tipo de membresía:</label>
+            <p>{{ $user->membership_type ?? 'No asignada' }}</p>
+
+            <label>Inicio de membresía:</label>
+            <p>{{ $user->membership_start_date ? \Carbon\Carbon::parse($user->membership_start_date)->format('d/m/Y') : 'No registrado' }}</p>
+
+            <label>Fecha de registro:</label>
+            <p>{{ $user->created_at->format('d/m/Y H:i') }}</p>
         </div>
-    </main>
+
+        <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-secondary">Cerrar Sesión</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
 
 </body>
 </html>

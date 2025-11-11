@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController; 
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\RecepcionistaController;
+use App\Http\Controllers\AsistenciaController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 
 Route::get('/', function () {
@@ -54,6 +58,41 @@ Route::middleware('auth')->group(function () {
     //contacto recepcionista
     Route::get('/recepcionista/contactos', [ContactoController::class, 'ver'])
         ->name('recepcionista.contactos');
+
+    //recepcionista agregar cliente
+    Route::get('/recepcionista/registrar-cliente', [RecepcionistaController::class, 'showRegistrarCliente'])
+        ->name('recepcionista.registrarCliente');
+
+    Route::post('/recepcionista/registrar-cliente', [RecepcionistaController::class, 'storeCliente'])
+        ->name('recepcionista.storeCliente');
+
+
+
+    //registro asistencia
+
+    Route::post('/registrar-asistencia', [AsistenciaController::class, 'registrar'])
+        ->name('asistencia.registrar');
+
+
+    //mostrar asistencias
+    Route::get('/asistencias/listar', [AsistenciaController::class, 'listar'])
+        ->name('asistencias.listar');
+
+
+    //vista de usuario
+
+
+    Route::get('/usuario/dashboard', [UserController::class, 'dashboard'])
+        ->middleware('auth')
+        ->name('usuario.dashboard');
+
+
+    //registro de admin
+    Route::prefix('admin')->group(function() {
+        Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::post('usuarios/guardar', [AdminController::class, 'storeUser'])->name('admin.storeUser');
+    });
+
 });
 
 

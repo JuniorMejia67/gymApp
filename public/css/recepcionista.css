@@ -1,0 +1,102 @@
+
+/* ESTILOS GENERALES */
+body {
+    margin: 0;
+    background:rgb(31,45,64);
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+    display: flex;
+    height: 100vh;
+}
+
+/* MENÚ LATERAL */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    background: #07121c;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.menu span {
+    color:rgb(4,150,139);
+    font-size: 24px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 12px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.menu li:hover,
+.menu li.activo {
+    background:#00796b;
+}
+
+/* PANEL DERECHO */
+.panel {
+    background: #0F1A25;
+    border-radius: 30px;
+    border: 2px solid #008c7a;
+    margin: 30px;
+    flex: 1;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* OCULTAR SECCIONES */
+.seccion {
+    display: none;
+}
+
+/* MOSTRAR LA PRIMERA */
+#gestion {
+    display: block;
+}
+
+/* TABLA DE GESTIÓN */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    border-bottom: 1px solid #008c7a;
+    padding: 10px;
+    text-align: left;
+}
+
+/* BOTÓN */
+.btn {
+    display:inline-block;
+    padding: 12px 20px;
+    background:#00796b;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
